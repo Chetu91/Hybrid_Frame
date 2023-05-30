@@ -1,5 +1,7 @@
 package generalUtils;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
@@ -26,9 +30,9 @@ public class BaseClass {
 	
 	@BeforeClass
 	public void launchBrowser() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
-		
+		WebDriverManager.chromedriver().setup();
 		String Browser = rfile.readPropertyFile("browser");
 		if(Browser.equalsIgnoreCase("chrome")) {
 			driver=new ChromeDriver();
@@ -46,6 +50,7 @@ public class BaseClass {
 		String PASSWORD=rfile.readPropertyFile("password");
 		
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(URL);
 //		driver.findElement(By.name("email")).sendKeys(USERNAME);
 //		driver.findElement(By.name("password")).sendKeys(PASSWORD);
@@ -59,11 +64,13 @@ public class BaseClass {
 //		wutl.synchronizeWait(driver);
 //		WebElement ele = driver.findElement(By.xpath("//button[text()='Logout']"));
 //		wutl.mouseAction(driver, ele);
+		
 		System.out.println("closeapplication");	
 	}
 	
 	@AfterClass
 	public void closeBrowser() {
+		
     driver.close();
 	System.out.println("closeBrowser");	
 	}

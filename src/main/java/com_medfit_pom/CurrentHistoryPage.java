@@ -125,6 +125,7 @@ public class CurrentHistoryPage {
 		selectsymptoms(element).click();
 	}
 	
+	
 	public void setDiagnosis(String diagnosis) {
 		wutl.enterText(entrdiagnosis, diagnosis);
 		

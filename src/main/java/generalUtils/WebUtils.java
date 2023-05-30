@@ -83,7 +83,7 @@ public class WebUtils {
 	
 	public void mouseAction(WebDriver driver, WebElement element) {
 		Actions a=new Actions(driver);
-		a.moveToElement(element);
+		a.moveToElement(element).perform();
 		}
 	
 	public void diubleClk(WebDriver driver, WebElement ele) {

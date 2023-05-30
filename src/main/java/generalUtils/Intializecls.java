@@ -2,6 +2,8 @@ package generalUtils;
 
 import org.openqa.selenium.WebDriver;
 
+import com_gos_pom.GosDesignationPage;
+import com_gos_pom.GosHomePage;
 import com_medfit_pom.BodyprofilePage;
 import com_medfit_pom.CurrentHistoryPage;
 import com_medfit_pom.GoalsPage;
@@ -17,6 +19,8 @@ public class Intializecls {
 	public BodyprofilePage bodyprofilepage;
 	public CurrentHistoryPage currenthistorypage;
 	public GoalsPage goalspage;
+	public GosHomePage goshomepage;
+	public GosDesignationPage gosdesignationpage;
 	
 	public Intializecls(WebDriver driver,long ETO,WebUtils wutl) {
 	
@@ -26,9 +30,11 @@ public class Intializecls {
 		bodyprofilepage=new BodyprofilePage(driver,ETO,wutl);
 		goalspage=new GoalsPage(driver,ETO,wutl);
 		currenthistorypage=new CurrentHistoryPage(driver,ETO,wutl);
+		goshomepage=new GosHomePage(driver,ETO,wutl);
+		gosdesignationpage=new GosDesignationPage(driver,ETO,wutl);
+		
 		
 	
-	
-	}
+		}
 
 }

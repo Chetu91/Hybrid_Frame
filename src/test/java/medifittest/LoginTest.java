@@ -28,8 +28,8 @@ public class LoginTest extends BaseClass {
 		 
 		 
 		Intializecls il=new Intializecls(driver,ETO,wutl);
-		il.loginpage.enteremail(USERNAME);
-		il.loginpage.enterpassword(PASSWORD);
+//		il.loginpage.enteremail(USERNAME);
+//		il.loginpage.enterpassword(PASSWORD);
 		il.loginpage.clkOnsubmits();
 		il.homepage.setFName("Dhananjay");
 //		il.homepage.setYearMonth("1994", "JUNE", "23");

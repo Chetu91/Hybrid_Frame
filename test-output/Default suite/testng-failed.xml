@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="medifittest.LoginTest">
+      <class name="com_gos_test.login">
         <methods>
-          <include name="test"/>
           <include name="closeApp"/>
+          <include name="Test1"/>
           <include name="oppApp"/>
           <include name="launchBrowser"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- medifittest.LoginTest -->
+      </class> <!-- com_gos_test.login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
